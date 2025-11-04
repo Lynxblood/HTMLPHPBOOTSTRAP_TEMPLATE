@@ -92,7 +92,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <input type="number" class="form-control" id="stock" name="stock" required>
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Descriptiox n</label>
+                        <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
                 </form>

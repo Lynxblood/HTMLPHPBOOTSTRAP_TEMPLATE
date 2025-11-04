@@ -1,31 +1,5 @@
 // public/assets/js/crud.js
 
-$(document).ready(function() {
-    // 1. Initialize DataTables
-    const productTable = $('#productTable').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url": "src/handlers/crud_ajax.php",
-            "type": "POST",
-            "data": { action: 'read' } // Specify the action for READ
-        },
-        "columns": [
-            { "data": "id" },
-            { "data": "product_name" },
-            { "data": "price_formatted" }, // Using the formatted price from PHP
-            { "data": "stock" },
-            { 
-                "data": null,
-                "defaultContent": `
-                    <button class='edit btn btn-sm btn-info me-1' data-bs-toggle='modal' data-bs-target='#productModal'><i class="fas fa-edit"></i> Edit</button>
-                    <button class='delete btn btn-sm btn-danger'><i class="fas fa-trash"></i> Delete</button>`
-            }
-        ]
-    });
-
-    // Get the Bootstrap Modal instance
-    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
     
     // Configure Alertify (Optional but recommended for better look/feel)
     alertify.set('notifier','position', 'top-right');
@@ -100,7 +74,32 @@ $(document).ready(function() {
         // return dialog if caller needs its
         return dialog;
     }
-    
+$(document).ready(function() {
+    // 1. Initialize DataTables
+    const productTable = $('#productTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "src/handlers/crud_ajax.php",
+            "type": "POST",
+            "data": { action: 'read' } // Specify the action for READ
+        },
+        "columns": [
+            { "data": "id" },
+            { "data": "product_name" },
+            { "data": "price_formatted" }, // Using the formatted price from PHP
+            { "data": "stock" },
+            { 
+                "data": null,
+                "defaultContent": `
+                    <button class='edit btn btn-sm btn-info me-1' data-bs-toggle='modal' data-bs-target='#productModal'><i class="fas fa-edit"></i> Edit</button>
+                    <button class='delete btn btn-sm btn-danger'><i class="fas fa-trash"></i> Delete</button>`
+            }
+        ]
+    });
+
+    // Get the Bootstrap Modal instance
+    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
 
 
     // --- C (Create) Setup ---
