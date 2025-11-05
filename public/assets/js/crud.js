@@ -20,6 +20,7 @@
         let okLabel = 'Confirm';
         if (style === 'danger') okLabel = 'Yes, Delete';
         else if (style === 'warning') okLabel = 'Yes, Proceed';
+        else if (style === 'info') okLabel = 'Okay';
     
         // --- Save current theme defaults (if available) ---
         const hasDefaults = !!(alertify && alertify.defaults && alertify.defaults.theme);
@@ -192,3 +193,16 @@ $(document).ready(function() {
         );
     });
 });
+
+// customAlertifyConfirm(
+//     'Just asking', 
+//     'Are you still okay bruh?',
+//     'info', 
+//     function() { // OK (Confirm) button action
+//         alertify.success('Good you are okay :>');
+//     }, 
+//     function() { // Cancel (Cancel) button action
+//         alertify.error('You are not okay :<');
+//     }
+// );
+
