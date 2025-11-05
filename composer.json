@@ -1,5 +1,5 @@
 {
-    "name": "lynxblood/myframework",
+    "name": "lynxblood/htmlphpbootstrap_template",
     "description": "My custom PHP mini framework",
     "type": "project",
     "require": {
